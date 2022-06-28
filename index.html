@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  <title>Document</title>
+</head>
+<body>
+  <div class="carousel">
+    <div class="carousel-item fade">
+    <img src="maria (1).jpg" alt="maria" height="200">
+    <blockquote class="testimonial">
+      <p class="testimonial-text">
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolor temporibus quisquam magnam quaerat maxime rem minima odio culpa, soluta, deleniti sed beatae esse iste pariatur reiciendis aliquid."
+      </p>
+      <p class="testimonial-author">Maria de Almeida</p>
+      <p class="testimonial-job">Senior Product Manager at EDP Comercial</p>
+    </blockquote>
+    </div>
+    <div class="carousel-item fade">
+    <img src="Untitled-1 copy.jpg" alt="maria" height="200">
+    <blockquote class="testimonial">
+      <p class="testimonial-text">
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolor temporibus quisquam magnam quaerat maxime rem minima odio culpa, soluta, deleniti sed beatae esse iste pariatur reiciendis aliquid."
+      </p>
+      <p class="testimonial-author">Mariooooooa de Almeida</p>
+      <p class="testimonial-job">Senior Product Manager at EDP Comercial</p>
+    </blockquote>
+    </div>
+
+        <div class="carousel-item fade">
+    <img src="Untitled-2.jpg" alt="maria" height="200">
+    <blockquote class="testimonial">
+      <p class="testimonial-text">
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolor temporibus quisquam magnam quaerat maxime rem minima odio culpa, soluta, deleniti sed beatae esse iste pariatur reiciendis aliquid."
+      </p>
+      <p class="testimonial-author">Marieeeeeeeeeeea de Almeida</p>
+      <p class="testimonial-job">Senior Product Manager at EDP Comercial</p>
+    </blockquote>
+    </div>
+    <button class="btn btn--left" onclick="plusSlides(-1)">
+      <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+</svg>
+</button>
+    <button class="btn btn--right" onclick="plusSlides(1)">
+     <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+</svg>
+</button>
+     <div class="dots">
+        <button class="dot dot--fill" onclick="currentSlide(1)">&nbsp;</button>
+        <button class="dot" onclick="currentSlide(2)">&nbsp;</button>
+        <button class="dot" onclick="currentSlide(3)">&nbsp;</button>
+      </div>
+  </div>
+  <script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("carousel-item");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "flex";
+  dots[slideIndex-1].className += " active";
+}
+  </script>
+</body>
+</html>
